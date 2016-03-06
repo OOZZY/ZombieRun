@@ -3,7 +3,8 @@ using System.Collections;
 
 public class CameraMovement : MonoBehaviour {
 	GameObject player;
-	float maxDistance = 8f;
+	float maxHorizontalDistance = 1f;
+	float maxVerticalDistance = 3f;
 
 	// Use this for initialization
 	void Start () {
@@ -12,18 +13,28 @@ public class CameraMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		Vector3 newPosition = transform.position;
+
 		float rightDistance = player.transform.position.x - transform.position.x;
-		if (rightDistance > maxDistance) {
-			Vector3 newPosition = transform.position;
-			newPosition.x += rightDistance - maxDistance;
-			transform.position = newPosition;
+		if (rightDistance > maxHorizontalDistance) {
+			newPosition.x += rightDistance - maxHorizontalDistance;
 		}
 
 		float leftDistance = transform.position.x - player.transform.position.x;
-		if (leftDistance > maxDistance) {
-			Vector3 newPosition = transform.position;
-			newPosition.x -= leftDistance - maxDistance;
-			transform.position = newPosition;
+		if (leftDistance > maxHorizontalDistance) {
+			newPosition.x -= leftDistance - maxHorizontalDistance;
 		}
+
+		float upDistance = player.transform.position.y - transform.position.y;
+		if (upDistance > maxVerticalDistance) {
+			newPosition.y += upDistance - maxVerticalDistance;
+		}
+
+		float downDistance = transform.position.y - player.transform.position.y;
+		if (downDistance > maxVerticalDistance) {
+			newPosition.y -= downDistance - maxVerticalDistance;
+		}
+
+		transform.position = newPosition;
 	}
 }
