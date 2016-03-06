@@ -3,8 +3,6 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
 	float velFactor = 10f;
-	float accx;
-	public Vector2 velocity;
 
 	// Use this for initialization
 	void Start () {
@@ -17,7 +15,7 @@ public class PlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		accx = Input.GetAxis ("Horizontal") * velFactor;
+		float accx = Input.GetAxis ("Horizontal") * velFactor;
 		Vector2 acc = new Vector2 (accx, 0);
 		if (accx > 0) {
 			GetComponent<SpriteRenderer> ().flipX = false;
@@ -27,8 +25,6 @@ public class PlayerMovement : MonoBehaviour {
 		}
 		//GetComponent<Rigidbody2D> ().MovePosition (transform.position + vel);
 		GetComponent<Rigidbody2D> ().AddForce (acc);
-
-		velocity = GetComponent<Rigidbody2D> ().velocity;
 
 		GetComponent<Rigidbody2D> ().MoveRotation (0); // no rotation
 
