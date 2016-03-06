@@ -4,7 +4,7 @@ using System.Collections;
 public class CameraMovement : MonoBehaviour {
 	GameObject player;
 	float maxHorizontalDistance = 1f;
-	float maxVerticalDistance = 3f;
+	float maxVerticalDistance = 4f;
 
 	// Use this for initialization
 	void Start () {

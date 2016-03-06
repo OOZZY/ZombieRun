@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
 	float velFactor = 10f;
+	public bool grounded = true;
 
 	// Use this for initialization
 	void Start () {
@@ -28,8 +29,9 @@ public class PlayerMovement : MonoBehaviour {
 
 		GetComponent<Rigidbody2D> ().MoveRotation (0); // no rotation
 
-		if (Input.GetKeyDown (KeyCode.Space)) {
+		if (Input.GetKeyDown (KeyCode.Space) && grounded) {
 			GetComponent<Rigidbody2D> ().AddForce (new Vector2 (0, 400));
+			grounded = false;
 		}
 	}
 }
