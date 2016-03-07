@@ -47,7 +47,9 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Camera\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\GUI\IntroductionSceneGUI.cs" />
+     <Compile Include="Assets\Scripts\GUI\Level01GUI.cs" />
      <Compile Include="Assets\Scripts\GUI\TitleScreenGUI.cs" />
+     <Compile Include="Assets\Scripts\Level\Level01EndTrigger.cs" />
      <Compile Include="Assets\Scripts\Platform\PlatformTrigger.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\Zombie\ZombieSpawnerTrigger.cs" />
