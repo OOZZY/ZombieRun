@@ -16,13 +16,13 @@ public class PlatformTrigger : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D collider) {
 		if (collider.gameObject == player) {
-			player.GetComponent<PlayerMovement> ().grounded = true;
+			player.GetComponent<PlayerBehavior> ().grounded = true;
 		}
 	}
 
 	void OnTriggerExit2D(Collider2D collider) {
 		if (collider.gameObject == player) {
-			player.GetComponent<PlayerMovement> ().grounded = false;
+			player.GetComponent<PlayerBehavior> ().grounded = false;
 		}
 	}
 }

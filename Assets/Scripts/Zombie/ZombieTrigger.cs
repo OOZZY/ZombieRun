@@ -14,6 +14,6 @@ public class ZombieTrigger : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D collider) {
-		
+
 	}
 }
