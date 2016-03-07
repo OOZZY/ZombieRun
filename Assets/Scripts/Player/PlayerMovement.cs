@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour {
 
 		GetComponent<Rigidbody2D> ().MoveRotation (0); // no rotation
 
-		if (Input.GetKeyDown (KeyCode.Space) && grounded) {
+		if ((Input.GetKeyDown (KeyCode.UpArrow) || Input.GetKeyDown (KeyCode.W)) && grounded) {
 			// jump
 			GetComponent<Rigidbody2D> ().AddForce (new Vector2 (0, 400));
 			grounded = false;
