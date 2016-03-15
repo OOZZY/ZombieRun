@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{500E2D42-ACA8-3E69-95CB-6A20B7A6E859}</ProjectGuid>
+    <ProjectGuid>{0FD1845C-C505-90A2-E649-117B47AF3C1B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -46,12 +46,18 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Camera\CameraMovement.cs" />
+     <Compile Include="Assets\Scripts\GUI\ComputerScene.cs" />
      <Compile Include="Assets\Scripts\GUI\IntroductionSceneGUI.cs" />
      <Compile Include="Assets\Scripts\GUI\Level01GUI.cs" />
+     <Compile Include="Assets\Scripts\GUI\PhoneScene.cs" />
      <Compile Include="Assets\Scripts\GUI\TitleScreenGUI.cs" />
      <Compile Include="Assets\Scripts\Level\Level01EndTrigger.cs" />
      <Compile Include="Assets\Scripts\Level\Level01EnterHouse.cs" />
+     <Compile Include="Assets\Scripts\Level\Level01EnterLab.cs" />
      <Compile Include="Assets\Scripts\Level\Level01EnterMap.cs" />
+     <Compile Include="Assets\Scripts\Level\StartPower.cs" />
+     <Compile Include="Assets\Scripts\Level\UseComputer.cs" />
+     <Compile Include="Assets\Scripts\Level\UsePhone.cs" />
      <Compile Include="Assets\Scripts\Platform\PlatformTrigger.cs" />
      <Compile Include="Assets\Scripts\Player\BulletBehavior.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerBehavior.cs" />
