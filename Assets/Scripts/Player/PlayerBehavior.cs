@@ -17,6 +17,10 @@ public class PlayerBehavior : MonoBehaviour {
 		globalState = GameObject.FindGameObjectWithTag ("GlobalState");
         anim = GetComponent<Animator>();
 		audio = GetComponent<AudioSource>();
+
+		if (UnityEngine.SceneManagement.SceneManager.GetActiveScene ().name.Equals ("Level01")) {
+			transform.position = globalState.GetComponent<GlobalState> ().level01SpawnPosition;
+		}
 	}
 
 	// Update is called once per frame
