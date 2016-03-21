@@ -16,10 +16,17 @@ public class StartPower : MonoBehaviour {
 
 	}
 
+	void OnTriggerEnter2D(Collider2D collider) {
+		if (collider.gameObject == player && !globalState.GetComponent<GlobalState>().powerStarted) {
+			globalState.GetComponent<GlobalState> ().objective = "Press E to power the power plant.";
+		}
+	}
+
 	void OnTriggerStay2D(Collider2D collider) {
 		if ((Input.GetKeyDown (KeyCode.E))) {
 			if (collider.gameObject == player) {
 				print ("Power Started");
+				globalState.GetComponent<GlobalState> ().objective = "Go back home.";
 				globalState.GetComponent<GlobalState> ().powerStarted = true;
 			}
 		}

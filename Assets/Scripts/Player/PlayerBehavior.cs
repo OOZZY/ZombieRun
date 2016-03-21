@@ -77,5 +77,8 @@ public class PlayerBehavior : MonoBehaviour {
 
 		content = new GUIContent ("ammo: " + globalState.GetComponent<GlobalState>().ammo);
 		GUI.Label (new Rect (10, 50, 100, 100), content, style);
+
+		content = new GUIContent ("objective: " + globalState.GetComponent<GlobalState>().objective);
+		GUI.Label (new Rect (10, 70, 100, 100), content, style);
 	}
 }

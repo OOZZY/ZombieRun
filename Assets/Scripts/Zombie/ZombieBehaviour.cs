@@ -25,6 +25,19 @@ public class ZombieBehaviour : MonoBehaviour {
 		if (collider.gameObject == player) {
 			globalState.GetComponent<GlobalState> ().health -= 10;
 			health -= 10;
+			player.GetComponent<PlayerBehavior> ().grounded = true;
+		}
+	}
+
+	void OnTriggerStay2D(Collider2D collider) {
+		if (collider.gameObject == player) {
+			player.GetComponent<PlayerBehavior> ().grounded = true;
+		}
+	}
+
+	void OnTriggerExit2D(Collider2D collider) {
+		if (collider.gameObject == player) {
+			player.GetComponent<PlayerBehavior> ().grounded = false;
 		}
 	}
 }

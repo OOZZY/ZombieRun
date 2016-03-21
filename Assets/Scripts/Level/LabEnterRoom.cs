@@ -16,6 +16,30 @@ public class LabEnterRoom : MonoBehaviour {
 
 	}
 
+	void OnTriggerEnter2D(Collider2D collider) {
+		if (collider.gameObject == player) {
+			if (name.Equals ("EnterLabRoom6")) {
+				globalState.GetComponent<GlobalState> ().objective = "This room is unlocked. Press down to enter the room.";
+			}
+			if (name.Equals ("EnterLabRoom10") && !globalState.GetComponent<GlobalState> ().hasKey) {
+				globalState.GetComponent<GlobalState> ().objective = "This room is locked. You need to find the key.";
+			}
+			if (name.Equals ("EnterLabRoom10") && globalState.GetComponent<GlobalState> ().hasKey) {
+				globalState.GetComponent<GlobalState> ().objective = "This room is locked. Press down to use the key.";
+			}
+		}
+	}
+
+	void OnTriggerExit2D(Collider2D collider) {
+		if (collider.gameObject == player) {
+			if (!globalState.GetComponent<GlobalState> ().hasKey) {
+				globalState.GetComponent<GlobalState> ().objective = "Find the unlocked room.";
+			} else {
+				globalState.GetComponent<GlobalState> ().objective = "Find the room with the cure.";
+			}
+		}
+	}
+
 	void OnTriggerStay2D(Collider2D collider) {
 		if ((Input.GetKeyDown (KeyCode.DownArrow))) {
 			if (collider.gameObject == player) {

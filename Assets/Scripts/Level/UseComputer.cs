@@ -16,10 +16,17 @@ public class UseComputer : MonoBehaviour {
 
 	}
 
+	void OnTriggerEnter2D(Collider2D collider) {
+		if (collider.gameObject == player && !globalState.GetComponent<GlobalState>().hasCureInfo) {
+			globalState.GetComponent<GlobalState> ().objective = "Press E to use the computer.";
+		}
+	}
+
 	void OnTriggerStay2D(Collider2D collider) {
 		if ((Input.GetKeyDown (KeyCode.E))) {
 			if (collider.gameObject == player) {
 				globalState.GetComponent<GlobalState> ().hasCureInfo = true;
+				globalState.GetComponent<GlobalState> ().objective = "Find the lab with the cure.";
 				UnityEngine.SceneManagement.SceneManager.LoadScene ("UseComputer");
 			}
 		}
