@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\GUI\Level01GUI.cs" />
      <Compile Include="Assets\Scripts\GUI\PhoneScene.cs" />
      <Compile Include="Assets\Scripts\GUI\TitleScreenGUI.cs" />
+     <Compile Include="Assets\Scripts\Items\ItemTrigger.cs" />
      <Compile Include="Assets\Scripts\Level\LabEnterRoom.cs" />
      <Compile Include="Assets\Scripts\Level\Level01EndTrigger.cs" />
      <Compile Include="Assets\Scripts\Level\Level01EnterHouse.cs" />
