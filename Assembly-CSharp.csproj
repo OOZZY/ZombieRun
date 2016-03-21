@@ -62,8 +62,8 @@
      <Compile Include="Assets\Scripts\Platform\PlatformTrigger.cs" />
      <Compile Include="Assets\Scripts\Player\BulletBehavior.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerBehavior.cs" />
+     <Compile Include="Assets\Scripts\Zombie\ZombieBehaviour.cs" />
      <Compile Include="Assets\Scripts\Zombie\ZombieSpawnerTrigger.cs" />
-     <Compile Include="Assets\Scripts\Zombie\ZombieTrigger.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/dev/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
