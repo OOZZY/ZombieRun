@@ -9,9 +9,13 @@ public class PlayerBehavior : MonoBehaviour {
 	public int ammo = 10;
     Animator anim;
 
+	public AudioClip shoot;
+	AudioSource audio;
+
     // Use this for initialization
     void Start () {
         anim = GetComponent<Animator>();
+		audio = GetComponent<AudioSource>();
 	}
 
 	// Update is called once per frame
@@ -39,6 +43,7 @@ public class PlayerBehavior : MonoBehaviour {
 		}
 
 		if (Input.GetKeyDown (KeyCode.Space) && ammo > 0) {
+			audio.PlayOneShot(shoot, 0.7F);
 			if (!GetComponent<SpriteRenderer> ().flipX) {
 				Instantiate (Resources.Load ("bullet"), transform.position + (new Vector3(2, 0)), transform.rotation);
 			} else {
