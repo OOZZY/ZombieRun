@@ -2,10 +2,12 @@
 using System.Collections;
 
 public class UseComputer : MonoBehaviour {
+	GameObject globalState;
 	GameObject player;
 
 	// Use this for initialization
 	void Start () {
+		globalState = GameObject.FindGameObjectWithTag ("GlobalState");
 		player = GameObject.FindGameObjectWithTag ("Player");
 	}
 
@@ -17,6 +19,7 @@ public class UseComputer : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D collider) {
 		if ((Input.GetKeyDown (KeyCode.E))) {
 			if (collider.gameObject == player) {
+				globalState.GetComponent<GlobalState> ().hasCureInfo = true;
 				UnityEngine.SceneManagement.SceneManager.LoadScene ("UseComputer");
 			}
 		}

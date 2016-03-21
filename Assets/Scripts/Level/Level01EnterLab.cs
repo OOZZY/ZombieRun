@@ -2,10 +2,12 @@
 using System.Collections;
 
 public class Level01EnterLab : MonoBehaviour {
+	GameObject globalState;
 	GameObject player;
 
 	// Use this for initialization
 	void Start () {
+		globalState = GameObject.FindGameObjectWithTag ("GlobalState");
 		player = GameObject.FindGameObjectWithTag ("Player");
 	}
 
@@ -15,8 +17,9 @@ public class Level01EnterLab : MonoBehaviour {
 	}
 
 	void OnTriggerStay2D(Collider2D collider) {
-		if ((Input.GetKeyDown (KeyCode.DownArrow))) {
+		if ((Input.GetKeyDown (KeyCode.DownArrow)) && globalState.GetComponent<GlobalState>().hasCureInfo) {
 			if (collider.gameObject == player) {
+				globalState.GetComponent<GlobalState> ().level01SpawnPosition = player.transform.position;
 				UnityEngine.SceneManagement.SceneManager.LoadScene ("InsideLab");
 			}
 		}
