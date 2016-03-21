@@ -30,6 +30,10 @@ public class ItemTrigger : MonoBehaviour {
 				globalState.GetComponent<GlobalState> ().ammo += 10;
 				playAudio();
 			}
+			if (name.StartsWith ("key")) {
+				globalState.GetComponent<GlobalState> ().hasKey = true;
+				playAudio();
+			}
 			Destroy (gameObject);
 		}
 	}
