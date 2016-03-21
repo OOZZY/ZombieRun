@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ZombieTrigger : MonoBehaviour {
+public class ZombieBehaviour : MonoBehaviour {
 	GameObject player;
 	public int health = 30;
 
@@ -12,6 +12,8 @@ public class ZombieTrigger : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		GetComponent<Rigidbody2D> ().velocity = new Vector2 (-1.5f, 0f);
+
 		if (health <= 0) {
 			Destroy (gameObject);
 		}
