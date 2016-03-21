@@ -21,7 +21,11 @@ public class LabEnterRoom : MonoBehaviour {
 			if (collider.gameObject == player) {
 				if (name.Equals ("EnterLabRoom6")) {
 					globalState.GetComponent<GlobalState> ().labSpawnPosition = player.transform.position;
-					UnityEngine.SceneManagement.SceneManager.LoadScene ("InsideLabRoom");
+					UnityEngine.SceneManagement.SceneManager.LoadScene ("UnlockedRoomWithKey");
+				}
+				if (name.Equals ("EnterLabRoom10") && globalState.GetComponent<GlobalState> ().hasKey) {
+					globalState.GetComponent<GlobalState> ().labSpawnPosition = player.transform.position;
+					UnityEngine.SceneManagement.SceneManager.LoadScene ("LockedRoom10");
 				}
 			}
 		}
