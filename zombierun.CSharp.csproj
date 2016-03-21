@@ -58,6 +58,12 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -69,6 +75,7 @@
     <Compile Include="Assets\Scripts\GUI\Level01GUI.cs" />
     <Compile Include="Assets\Scripts\GUI\PhoneScene.cs" />
     <Compile Include="Assets\Scripts\GUI\TitleScreenGUI.cs" />
+    <Compile Include="Assets\Scripts\Global\GlobalState.cs" />
     <Compile Include="Assets\Scripts\Items\ItemTrigger.cs" />
     <Compile Include="Assets\Scripts\Level\LabEnterRoom.cs" />
     <Compile Include="Assets\Scripts\Level\Level01EndTrigger.cs" />
