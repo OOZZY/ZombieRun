@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\GUI\Level01GUI.cs" />
     <Compile Include="Assets\Scripts\GUI\PhoneScene.cs" />
     <Compile Include="Assets\Scripts\GUI\TitleScreenGUI.cs" />
+    <Compile Include="Assets\Scripts\Items\ItemTrigger.cs" />
     <Compile Include="Assets\Scripts\Level\LabEnterRoom.cs" />
     <Compile Include="Assets\Scripts\Level\Level01EndTrigger.cs" />
     <Compile Include="Assets\Scripts\Level\Level01EnterHouse.cs" />
@@ -80,8 +81,8 @@
     <Compile Include="Assets\Scripts\Platform\PlatformTrigger.cs" />
     <Compile Include="Assets\Scripts\Player\BulletBehavior.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerBehavior.cs" />
+    <Compile Include="Assets\Scripts\Zombie\ZombieBehaviour.cs" />
     <Compile Include="Assets\Scripts\Zombie\ZombieSpawnerTrigger.cs" />
-    <Compile Include="Assets\Scripts\Zombie\ZombieTrigger.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

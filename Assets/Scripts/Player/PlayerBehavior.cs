@@ -7,16 +7,19 @@ public class PlayerBehavior : MonoBehaviour {
 
 	public int health = 100;
 	public int ammo = 10;
+    Animator anim;
 
-	// Use this for initialization
-	void Start () {
-
+    // Use this for initialization
+    void Start () {
+        anim = GetComponent<Animator>();
 	}
 
 	// Update is called once per frame
 	void Update () {
+         
 		float direction = Input.GetAxis ("Horizontal");
 		float accx = direction * velFactor;
+        anim.SetFloat("speed", Mathf.Abs(accx));
 		Vector2 acc = new Vector2 (accx, 0);
 		if (accx > 0) {
 			GetComponent<SpriteRenderer> ().flipX = false;
