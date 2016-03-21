@@ -2,10 +2,11 @@
 using System.Collections;
 
 public class Level01GUI : MonoBehaviour {
+	GameObject player;
 
 	// Use this for initialization
 	void Start () {
-	
+		player = GameObject.FindGameObjectWithTag ("Player");
 	}
 	
 	// Update is called once per frame
@@ -18,5 +19,11 @@ public class Level01GUI : MonoBehaviour {
 		GUIStyle style = new GUIStyle ();
 		style.normal.textColor = Color.black;
 		GUI.Label (new Rect (10, 10, 100, 100), content, style);
+
+		content = new GUIContent ("health: " + player.GetComponent<PlayerBehavior>().health);
+		GUI.Label (new Rect (10, 30, 100, 100), content, style);
+
+		content = new GUIContent ("ammo: " + player.GetComponent<PlayerBehavior>().ammo);
+		GUI.Label (new Rect (10, 50, 100, 100), content, style);
 	}
 }

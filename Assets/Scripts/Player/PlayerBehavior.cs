@@ -5,6 +5,9 @@ public class PlayerBehavior : MonoBehaviour {
 	float velFactor = 10f;
 	public bool grounded = true;
 
+	public int health = 100;
+	public int ammo = 10;
+
 	// Use this for initialization
 	void Start () {
 
@@ -32,13 +35,18 @@ public class PlayerBehavior : MonoBehaviour {
 			grounded = false;
 		}
 
-		if (Input.GetKeyDown (KeyCode.Space)) {
+		if (Input.GetKeyDown (KeyCode.Space) && ammo > 0) {
 			if (!GetComponent<SpriteRenderer> ().flipX) {
 				Instantiate (Resources.Load ("bullet"), transform.position + (new Vector3(2, 0)), transform.rotation);
 			} else {
 				GameObject bullet = (GameObject)Instantiate (Resources.Load ("bullet"), transform.position + (new Vector3(-2, 0)), transform.rotation);
 				bullet.GetComponent<SpriteRenderer> ().flipX = true;
 			}
+			ammo--;
+		}
+
+		if (health <= 0) {
+			UnityEngine.SceneManagement.SceneManager.LoadScene ("TitleScreen");
 		}
 	}
 }

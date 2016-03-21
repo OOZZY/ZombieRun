@@ -25,7 +25,7 @@ public class BulletBehavior : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D collider) {
 		if (collider.gameObject.name.Equals ("zombie(Clone)")) {
-			Destroy (collider.gameObject);
+			collider.GetComponent<ZombieTrigger> ().health -= 10;
 		}
 			
 		Destroy (gameObject);
