@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class ItemTrigger : MonoBehaviour {
+	GameObject globalState;
 	GameObject player;
 
 	public AudioClip pickupItem;
@@ -9,6 +10,7 @@ public class ItemTrigger : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		globalState = GameObject.FindGameObjectWithTag ("GlobalState");
 		player = GameObject.FindGameObjectWithTag ("Player");
 		audio = GetComponent<AudioSource>();
 	}
@@ -21,11 +23,11 @@ public class ItemTrigger : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D collider) {
 		if (collider.gameObject == player) {
 			if (name.StartsWith("health")) {
-				player.GetComponent<PlayerBehavior> ().health += 10;
+				globalState.GetComponent<GlobalState> ().health += 10;
 				playAudio();
 			}
 			if (name.StartsWith("ammo")) {
-				player.GetComponent<PlayerBehavior> ().ammo += 10;
+				globalState.GetComponent<GlobalState> ().ammo += 10;
 				playAudio();
 			}
 			Destroy (gameObject);

@@ -2,11 +2,13 @@
 using System.Collections;
 
 public class ZombieBehaviour : MonoBehaviour {
+	GameObject globalState;
 	GameObject player;
 	public int health = 30;
 
 	// Use this for initialization
 	void Start () {
+		globalState = GameObject.FindGameObjectWithTag ("GlobalState");
 		player = GameObject.FindGameObjectWithTag ("Player");
 	}
 	
@@ -21,7 +23,7 @@ public class ZombieBehaviour : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D collider) {
 		if (collider.gameObject == player) {
-			player.GetComponent<PlayerBehavior> ().health -= 10;
+			globalState.GetComponent<GlobalState> ().health -= 10;
 			health -= 10;
 		}
 	}

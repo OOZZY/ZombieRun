@@ -2,11 +2,11 @@
 using System.Collections;
 
 public class PlayerBehavior : MonoBehaviour {
+	GameObject globalState;
+
 	float velFactor = 10f;
 	public bool grounded = true;
 
-	public int health = 100;
-	public int ammo = 10;
     Animator anim;
 
 	public AudioClip shoot;
@@ -14,13 +14,13 @@ public class PlayerBehavior : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+		globalState = GameObject.FindGameObjectWithTag ("GlobalState");
         anim = GetComponent<Animator>();
 		audio = GetComponent<AudioSource>();
 	}
 
 	// Update is called once per frame
 	void Update () {
-         
 		float direction = Input.GetAxis ("Horizontal");
 		float accx = direction * velFactor;
         anim.SetFloat("speed", Mathf.Abs(accx));
@@ -42,7 +42,7 @@ public class PlayerBehavior : MonoBehaviour {
 			grounded = false;
 		}
 
-		if (Input.GetKeyDown (KeyCode.Space) && ammo > 0) {
+		if (Input.GetKeyDown (KeyCode.Space) && globalState.GetComponent<GlobalState> ().ammo > 0) {
 			audio.PlayOneShot(shoot, 0.7F);
 			if (!GetComponent<SpriteRenderer> ().flipX) {
 				Instantiate (Resources.Load ("bullet"), transform.position + (new Vector3(2, 0)), transform.rotation);
@@ -50,10 +50,10 @@ public class PlayerBehavior : MonoBehaviour {
 				GameObject bullet = (GameObject)Instantiate (Resources.Load ("bullet"), transform.position + (new Vector3(-2, 0)), transform.rotation);
 				bullet.GetComponent<SpriteRenderer> ().flipX = true;
 			}
-			ammo--;
+			globalState.GetComponent<GlobalState> ().ammo--;
 		}
 
-		if (health <= 0) {
+		if (globalState.GetComponent<GlobalState> ().health <= 0) {
 			UnityEngine.SceneManagement.SceneManager.LoadScene ("TitleScreen");
 		}
 	}

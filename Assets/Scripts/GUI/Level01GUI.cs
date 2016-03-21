@@ -2,11 +2,11 @@
 using System.Collections;
 
 public class Level01GUI : MonoBehaviour {
-	GameObject player;
+	GameObject globalState;
 
 	// Use this for initialization
 	void Start () {
-		player = GameObject.FindGameObjectWithTag ("Player");
+		globalState = GameObject.FindGameObjectWithTag ("GlobalState");
 	}
 	
 	// Update is called once per frame
@@ -20,10 +20,10 @@ public class Level01GUI : MonoBehaviour {
 		style.normal.textColor = Color.black;
 		GUI.Label (new Rect (10, 10, 100, 100), content, style);
 
-		content = new GUIContent ("health: " + player.GetComponent<PlayerBehavior>().health);
+		content = new GUIContent ("health: " + globalState.GetComponent<GlobalState>().health);
 		GUI.Label (new Rect (10, 30, 100, 100), content, style);
 
-		content = new GUIContent ("ammo: " + player.GetComponent<PlayerBehavior>().ammo);
+		content = new GUIContent ("ammo: " + globalState.GetComponent<GlobalState>().ammo);
 		GUI.Label (new Rect (10, 50, 100, 100), content, style);
 	}
 }
