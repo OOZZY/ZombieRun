@@ -2,10 +2,12 @@
 using System.Collections;
 
 public class LabEnterRoom : MonoBehaviour {
+	GameObject globalState;
 	GameObject player;
 
 	// Use this for initialization
 	void Start () {
+		globalState = GameObject.FindGameObjectWithTag ("GlobalState");
 		player = GameObject.FindGameObjectWithTag ("Player");
 	}
 
@@ -17,7 +19,10 @@ public class LabEnterRoom : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D collider) {
 		if ((Input.GetKeyDown (KeyCode.DownArrow))) {
 			if (collider.gameObject == player) {
-				UnityEngine.SceneManagement.SceneManager.LoadScene ("InsideLabRoom");
+				if (name.Equals ("EnterLabRoom6")) {
+					globalState.GetComponent<GlobalState> ().labSpawnPosition = player.transform.position;
+					UnityEngine.SceneManagement.SceneManager.LoadScene ("InsideLabRoom");
+				}
 			}
 		}
 	}

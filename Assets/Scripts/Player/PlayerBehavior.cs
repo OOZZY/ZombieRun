@@ -21,6 +21,10 @@ public class PlayerBehavior : MonoBehaviour {
 		if (UnityEngine.SceneManagement.SceneManager.GetActiveScene ().name.Equals ("Level01")) {
 			transform.position = globalState.GetComponent<GlobalState> ().level01SpawnPosition;
 		}
+
+		if (UnityEngine.SceneManagement.SceneManager.GetActiveScene ().name.Equals ("InsideLab")) {
+			transform.position = globalState.GetComponent<GlobalState> ().labSpawnPosition;
+		}
 	}
 
 	// Update is called once per frame
